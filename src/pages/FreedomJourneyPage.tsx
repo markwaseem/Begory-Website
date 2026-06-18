@@ -203,7 +203,9 @@ function StepResult({ answer1, answer2, onRestart }: StepResultProps) {
 
       <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
         <a
-          href="/downloads/freedom-journey.apk"
+          href="https://github.com/markwaseem/Begory-Website/releases/download/v1.0.0/app-release.apk" 
+           target="_blank"
+           rel="noopener noreferrer"
           download
           className="inline-flex items-center gap-3 font-bold text-lg px-8 py-4 rounded-2xl text-white transition-all duration-300 hover:scale-105 hover:shadow-xl"
           style={{ background: "linear-gradient(135deg, hsl(218, 65%, 18%), hsl(204, 72%, 35%))" }}
