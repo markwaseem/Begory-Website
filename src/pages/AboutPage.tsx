@@ -42,7 +42,7 @@ export default function AboutPage() {
               onClick={() => navigate("/freedom-journey")}
               className="w-full sm:w-auto font-bold text-base md:text-lg px-8 py-4 rounded-2xl bg-gold text-navy hover:bg-gold/90 transition-all duration-300 shadow-lg shadow-gold/20 hover:scale-105 cursor-pointer focus:outline-none"
             >
-              ابدأ رحلة حرية
+              اعرف برنامج رحلة حرية
             </button>
             <button
               onClick={() => navigate("/courses")}
