@@ -40,9 +40,11 @@ const navItems = [
           {/* شعار المؤسسة والاسم */}
           <div className="flex-shrink-0 flex items-center gap-3">
             <Link href="/" className="flex items-center gap-3 cursor-pointer">
-              <div className="w-10 h-10 rounded-full bg-gold flex items-center justify-center font-bold text-navy text-xl shadow-inner">
-                BG
-              </div>
+              <img 
+                src="/begory-logo.png"  // تأكد من وجود الشرطة المائلة / قبل اسم الصورة مباشرة
+                alt="BeGory Logo" 
+                className="h-12 w-12 object-contain" 
+                />
               <span className={`text-2xl font-black tracking-wide ${scrolled ? "text-navy" : "text-white"}`}>
                 بي جوري
               </span>
