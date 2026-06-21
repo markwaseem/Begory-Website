@@ -1,36 +1,35 @@
-import { Switch, Route } from "wouter";
+import { Switch, Route, Router as WouterRouter } from "wouter";
 import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import CoursesPage from "./pages/CoursesPage";
 import FreedomJourneyPage from "./pages/FreedomJourneyPage";
 import VideoGalleryPage from "./pages/VideoGalleryPage";
-import DonatePage from "./pages/DonatePage"; 
+// import DonatePage from "@/pages/DonatePage"; // أضفه إذا كنت تستخدمه
+import NotFound from "./pages/not-found";
 
 function Router() {
   return (
-    <Switch>
-      {/* هنا الرابط الرئيسي للموقع يوجه لصفحة التعريف مباشرة */}
-      <Route path="/" component={AboutPage} /> 
-      <Route path="/about" component={AboutPage} />
-      <Route path="/courses" component={CoursesPage} />
-      <Route path="/freedom-journey" component={FreedomJourneyPage} />
-      <Route path="/videos" component={VideoGalleryPage} />
-      <Route path="/donate" component={DonatePage} />
-      <Route>404 Page Not Found</Route>
-    </Switch>
+    <>
+      <Switch>
+        <Route path="/" component={HomePage} />
+        <Route path="/about" component={AboutPage} />
+        <Route path="/courses" component={CoursesPage} />
+        <Route path="/freedom-journey" component={FreedomJourneyPage} />
+        <Route path="/videos" component={VideoGalleryPage} />
+        {/* <Route path="/donate" component={DonatePage} /> */}
+        <Route component={NotFound} />
+      </Switch>
+    </>
   );
 }
 
 function App() {
   return (
-    <div className="min-h-screen bg-background font-sans antialiased">
+    <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
       <Navbar />
-      <main>
-        <Router />
-      </main>
-      <Footer />
-    </div>
+      <Router />
+    </WouterRouter>
   );
 }
 

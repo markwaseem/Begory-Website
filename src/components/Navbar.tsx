@@ -19,13 +19,13 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navItems = [
-    { name: "الرئيسية", path: "/" },
-    { name: "عن بي جوري", path: "/about" },
-    { name: "الكورسات السنوية", path: "/courses" },
-    { name: "برنامج رحلة حرية", path: "/freedom-journey" },
-    { name: "معرض الفيديوهات", path: "/videos" },
-  ];
+const navItems = [
+  { href: "/", label: "الرئيسية" },
+  { href: "/about", label: "عن بي جوري" },
+  { href: "/courses", label: "الكورسات" },
+  { href: "/freedom-journey", label: "رحلة حرية" },
+  { href: "/videos", label: "مكتبة الفيديوهات" },
+];
 
   return (
     <nav
@@ -52,9 +52,9 @@ export default function Navbar() {
           {/* روابط التنقل للكمبيوتر */}
           <div className="hidden md:flex items-center gap-8">
             {navItems.map((item) => {
-              const isActive = location === item.path;
+              const isActive = location === item.href;
               return (
-                <Link key={item.path} href={item.path}>
+                <Link key={item.href} href={item.href}>
                   <span
                     className={`font-semibold text-lg pb-1 border-b-2 transition-all duration-200 cursor-pointer ${
                       isActive
@@ -64,7 +64,7 @@ export default function Navbar() {
                           }`
                     }`}
                   >
-                    {item.name}
+                    {item.label}
                   </span>
                 </Link>
               );
@@ -102,9 +102,9 @@ export default function Navbar() {
         <div className="md:hidden bg-white shadow-xl animate-in fade-in slide-in-from-top-5 duration-200">
           <div className="px-4 pt-2 pb-6 space-y-2 flex flex-col border-t border-gray-100">
             {navItems.map((item) => {
-              const isActive = location === item.path;
+              const isActive = location === item.href;
               return (
-                <Link key={item.path} href={item.path}>
+                <Link key={item.href} href={item.href}>
                   <span
                     onClick={() => setIsOpen(false)}
                     className={`block px-3 py-3 rounded-xl text-lg font-medium cursor-pointer transition-colors ${
@@ -113,7 +113,7 @@ export default function Navbar() {
                         : "text-navy hover:bg-gray-50"
                     }`}
                   >
-                    {item.name}
+                    {item.label}
                   </span>
                 </Link>
               );
