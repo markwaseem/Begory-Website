@@ -17,7 +17,7 @@ function Router() {
         <Route path="/courses" component={CoursesPage} />
         <Route path="/freedom-journey" component={FreedomJourneyPage} />
         <Route path="/videos" component={VideoGalleryPage} />
-        {/* <Route path="/donate" component={DonatePage} /> */}
+        <Route path="/donate" component={DonatePage} />
         <Route component={NotFound} />
       </Switch>
     </>
